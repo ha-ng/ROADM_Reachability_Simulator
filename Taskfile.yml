@@ -1,0 +1,34 @@
+version: '3'
+
+tasks:
+  default:
+    vars:
+      COLON:
+        sh: >-
+          tmp=$(task -l ^| peco);
+          if [ "${tmp:0:2}" = "* " ]; then
+            tmp=${tmp:2}
+            list=(${tmp/,/ });
+            echo ${list[0]}
+          else
+            echo
+          fi
+      TASKNAME:
+        sh: tmp={{.COLON}}; echo "${tmp:0:-1}"
+    cmds:
+      - task {{.TASKNAME}}
+    preconditions:
+      - sh: '[[ "{{.COLON}}" == "{{.TASKNAME}}:" ]]'
+        msg: "タスクを選択してください"
+  install:
+    desc: initial command for post scripts
+    cmds:
+      - sudo apt-get update
+      - sudo apt-get install -y iputils-ping net-tools
+      - sudo apt-get install -y sshpass
+      - sudo apt-get install -y peco
+      - pip install -r requirements.txt
+  ssh-sample:
+    desc: connect to MYGP120c-SRT01z(F1A,10.254.0.51) vs TKYCH03e-SRT01z,TKYCH03c-HRT01z
+    cmds:
+      - sshpass -p $password ssh $username@10.254.0.51
