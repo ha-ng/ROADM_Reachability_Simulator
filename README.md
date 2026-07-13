@@ -30,3 +30,23 @@ composeを使うときやpython dotenvを使う時に使い勝手がよいので
 
 [Confluence](https://sonync.atlassian.net/wiki/spaces/Networkwiki/pages/100008609/Dev+Containers)を参照
 
+## ROADM Reachability Simulator
+
+このRepositoryには、ROADMリングネットワークにおける波長到達性を評価するシミュレータを追加しています。
+
+### 対応している入力
+- DCOモジュール仕様: `json` (speed/modulationごとの最大損失・最大距離)
+- ROADM仕様: `json` (vendor/model/node_loss_db)
+- ルート一覧: `csv` または `xlsx` (`fiber_type,start_site,end_site,distance_km,loss_db,bypass_sites`)
+- 波長計画: `json` (100G/400G coherent想定、speed/modulation/source/destination)
+- EDFA: 波長計画JSON内の `amplifiers.boost_gain_db`, `amplifiers.preamp_gain_db`
+
+### 実行例
+```bash
+python roadm_reachability_simulator.py \
+  --dco-spec dco_spec.json \
+  --roadm-spec roadm_spec.json \
+  --routes routes.csv \
+  --wavelength-plan wavelength_plan.json \
+  --output report.json
+```
