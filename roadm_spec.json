@@ -1,0 +1,6 @@
+{
+  "vendor": "Fujitsu",
+  "model": "1FINITY L200 ILA",
+  "node_loss_db": 0.0,
+  "notes": "Using L200 as ILA inline amplifier node. No explicit per-transit insertion-loss numeric table was extracted from PDF text, so transit node loss is modeled as 0.0 dB and span loss remains the dominant path loss term."
+}
