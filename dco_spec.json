@@ -1,0 +1,38 @@
+{
+  "modules": [
+    {
+      "name": "OPENZRPLUS",
+      "vendor": "Fujitsu",
+      "supported_profiles": [
+        {
+          "speed_gbps": 100,
+          "modulation": "QPSK",
+          "max_path_loss_db": 30.0,
+          "max_distance_km": 1000.0,
+          "min_osnr_db": 12.5,
+          "min_q_value": 6.5,
+          "launch_power_dbm": -5.0,
+          "notes": "100G-ZR+ profile for simulation. min_osnr_db aligned to OpenZR+ OSNR tolerance (at OFEC threshold). min_q_value remains implementation-specific and should be validated against vendor DSP/FEC criteria."
+        },
+        {
+          "speed_gbps": 400,
+          "modulation": "16QAM",
+          "max_path_loss_db": 20.0,
+          "max_distance_km": 150.0,
+          "min_osnr_db": 24.0,
+          "min_q_value": 8.5,
+          "launch_power_dbm": -5.0,
+          "notes": "400G-ZR+ profile for simulation. min_osnr_db aligned to OpenZR+ OSNR tolerance (at OFEC threshold). min_q_value remains implementation-specific and should be validated against vendor DSP/FEC criteria."
+        },
+        {
+          "speed_gbps": 200,
+          "modulation": "16QAM",
+          "max_path_loss_db": 13.0,
+          "max_distance_km": 770.0,
+          "launch_power_dbm": -5.0,
+          "notes": "max_distance_km from FUJITSU 1FINITY L100 USER MANUAL (Table 2, OSNR OFF). max_path_loss_db and launch_power_dbm derived conservatively from T700 Ex transmit/receive ranges in 1FINITY_光入出力規格_Ver1.2.pdf."
+        }
+      ]
+    }
+  ]
+}

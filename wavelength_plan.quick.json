@@ -1,0 +1,43 @@
+{
+  "amplifiers": {
+    "boost_gain_db": 2.0,
+    "preamp_gain_db": 2.0,
+    "noise_figure_db": 5.5,
+    "osnr_penalty_per_hop_db": 0.7,
+    "osnr_penalty_per_km_db": 0.002,
+    "channel_count": 90,
+    "wss_narrowing_per_hop_ghz": 0.25,
+    "clipping_penalty_coef_db_per_ghz": 0.1,
+    "ase_inv_osnr_per_hop": 0.0002,
+    "gain_flatness_penalty_db": 0.35,
+    "spm_penalty_coef": 0.002,
+    "xpm_penalty_coef": 0.001,
+    "fwm_penalty_coef": 0.0004
+  },
+  "wavelengths": [
+    {
+      "id": "ch-100g-zrplus",
+      "source_site": "局舎A",
+      "destination_site": "局舎Z",
+      "speed_gbps": 100,
+      "modulation": "QPSK",
+      "dco_module": "OPENZRPLUS",
+      "baud_rate_gbaud": 32.0,
+      "grid_spacing_ghz": 50.0,
+      "filter_shape_factor": 0.95,
+      "channel_count": 90
+    },
+    {
+      "id": "ch-400g-zrplus",
+      "source_site": "局舎A",
+      "destination_site": "局舎Z",
+      "speed_gbps": 400,
+      "modulation": "16QAM",
+      "dco_module": "OPENZRPLUS",
+      "baud_rate_gbaud": 64.0,
+      "grid_spacing_ghz": 50.0,
+      "filter_shape_factor": 0.95,
+      "channel_count": 90
+    }
+  ]
+}

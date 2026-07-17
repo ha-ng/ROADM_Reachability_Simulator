@@ -1,0 +1,6 @@
+{
+  "vendor": "<ROADM vendor>",
+  "model": "<ROADM model>",
+  "node_loss_db": 1.0,
+  "notes": "Node loss is applied on transit nodes in the simulator"
+}
